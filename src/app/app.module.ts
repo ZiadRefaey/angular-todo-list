@@ -14,6 +14,9 @@ import { HeaderComponent } from './components/layout/header/header.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
 import { ContainerComponent } from './components/container/container.component';
 import { heroTrash, heroCheck, heroPencil } from '@ng-icons/heroicons/outline';
+import { provideRouter } from '@angular/router';
+import { TodoPageComponent } from './todo-page/todo-page.component';
+import { AddTodoPageComponent } from './add-todo-page/add-todo-page.component';
 @NgModule({
   declarations: [
     App,
@@ -22,6 +25,8 @@ import { heroTrash, heroCheck, heroPencil } from '@ng-icons/heroicons/outline';
     HeaderComponent,
     FooterComponent,
     ContainerComponent,
+    TodoPageComponent,
+    AddTodoPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,6 +36,18 @@ import { heroTrash, heroCheck, heroPencil } from '@ng-icons/heroicons/outline';
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter([
+      {
+        path: '',
+        component: TodoPageComponent,
+        title: 'Todo List',
+      },
+      {
+        path: 'add-todo',
+        loadComponent: () =>
+          import('./add-todo-page/add-todo-page.component').then((m) => m.AddTodoPageComponent),
+      },
+    ]),
   ],
   bootstrap: [App],
 })

@@ -7,7 +7,7 @@ import { ToDoService } from '../../services/to-do-service.service';
   templateUrl: './todo-list.component.html',
   styleUrl: './todo-list.component.css',
   host: {
-    class: 'w-full max-w-2xl overflow-y-hidden flex-1 mx-auto py-4 gap-2 flex flex-col',
+    class: '',
   },
 })
 export class TodoListComponent {
