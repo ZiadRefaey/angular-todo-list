@@ -6,9 +6,6 @@ import { ToDoService } from '../../services/to-do-service.service';
   standalone: false,
   templateUrl: './todo-list.component.html',
   styleUrl: './todo-list.component.css',
-  host: {
-    class: '',
-  },
 })
 export class TodoListComponent {
   private todosSerice = inject(ToDoService);
@@ -16,7 +13,6 @@ export class TodoListComponent {
     return this.todosSerice.todoList;
   }
   createTodo() {
-    // this.http.post('', { title: 'make one billion dollars', date: new Date(), isChecked: false });
     this.todosSerice
       .createTodo({
         title: 'make one billion dollars',

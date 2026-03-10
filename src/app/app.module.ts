@@ -44,8 +44,9 @@ import { AddTodoPageComponent } from './add-todo-page/add-todo-page.component';
       },
       {
         path: 'add-todo',
-        loadComponent: () =>
-          import('./add-todo-page/add-todo-page.component').then((m) => m.AddTodoPageComponent),
+        component: AddTodoPageComponent,
+        // loadComponent: () =>
+        //   import('./add-todo-page/add-todo-page.component').then((m) => m.AddTodoPageComponent),
       },
     ]),
   ],

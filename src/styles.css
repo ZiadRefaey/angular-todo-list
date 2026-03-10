@@ -20,6 +20,16 @@
   --color-muted-dark: #1e293b;
   --color-card-background: #161c2d;
 }
+/* globals.css */
+
+@layer utilities {
+  .glow {
+    @apply relative text-white; /* optional base styling */
+    box-shadow: 0 0 10px #135bec;
+
+    transition: text-shadow 0.3s ease-in-out;
+  }
+}
 html {
   overflow-x: hidden;
   color: white;

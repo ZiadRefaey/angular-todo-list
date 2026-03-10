@@ -1,1 +1,51 @@
-<p>add-todo-page works!</p>
+<form class="w-full h-full max-w-md mx-auto">
+  <h1 class="font-bold text-3xl mb-10">Create a New Task</h1>
+  <div class="flex items-start justify-center gap-2 flex-col mb-6">
+    <label for="title" class="font-bold">TASK TITLE</label>
+    <div
+      class="border-primary border w-full pl-2 rounded-md flex items-center justify-center gap-5 glow bg-background-light"
+    >
+      <i class="pi pi-tag text-primary text-xl"></i>
+      <input type="text" class="w-full py-2 outline-none" placeholder="Task title..." />
+    </div>
+  </div>
+  <div class="flex items-start justify-center gap-2 flex-col mb-6">
+    <label for="details" class="font-bold">TASK DETAILS</label>
+    <div
+      class="border-primary border glow w-full pl-2 rounded-md flex items-start justify-center gap-5 p-2 bg-background-light"
+    >
+      <i class="pi pi-file text-2xl text-primary"></i>
+      <textarea
+        type="text"
+        class="w-full outline-none min-h-40"
+        placeholder="Task details..."
+      ></textarea>
+    </div>
+  </div>
+  <div>
+    <label for="" class="font-bold mb-5">Priority Level</label>
+    <div class="flex items-center justify-between gap-6 mt-2 mb-5">
+      <div
+        class="bg-primary-dark py-2 text-center hover:bg-primary-light rounded-xl font-light border border-primary-light flex-1 text-sm"
+      >
+        LOW
+      </div>
+      <div
+        class="bg-primary-dark py-2 text-center hover:bg-primary-light rounded-xl font-light border border-primary-light flex-1 text-sm"
+      >
+        MEDIUM
+      </div>
+      <div
+        class="bg-primary-dark py-2 text-center hover:bg-primary-light rounded-xl font-light border border-primary-light flex-1 text-sm"
+      >
+        HIGH
+      </div>
+    </div>
+  </div>
+  <button
+    class="w-full bg-primary rounded-md py-3 hover:bg-primary-light transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 text-lg"
+  >
+    Add Task
+    <i class="pi pi-plus-circle mr-2 text-white"></i>
+  </button>
+</form>
