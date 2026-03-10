@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'tailwindcss';
+@import 'primeicons/primeicons.css';
+
+@theme {
+  --color-background: #0a0e17;
+  --color-background-light: #161c2d;
+  --color-primary-light: #152957;
+  --color-primary: #135bec;
+  --color-primary-dark: #162240;
+  --color-danger-light: #ef4444;
+  --color-danger: #912430;
+  --color-danger-dark: #2c202f;
+  --color-success-light: #10b981;
+  --color-success: #154844;
+  --color-success-dark: #162c35;
+  --color-muted-light: #94a3b8;
+  --color-muted: #334155;
+  --color-muted-dark: #1e293b;
+  --color-card-background: #161c2d;
+}
+html {
+  overflow-x: hidden;
+  color: white;
+}
