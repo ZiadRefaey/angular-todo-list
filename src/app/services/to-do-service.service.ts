@@ -7,15 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ToDoService {
   private http = inject(HttpClient);
-  private todoListArray: TodoItem[] = [
-    {
-      title: 'Optimize app performance',
-      date: new Date(),
-      isChecked: true,
-      priority: 'LOW',
-      details: 'optimized details',
-    },
-  ];
+
   createTodo(body: TodoItem) {
     return this.http.post<TodoItem>('http://localhost:3000/todos', body);
   }
@@ -25,8 +17,5 @@ export class ToDoService {
   }
   deleteTodo(id: string) {
     return this.http.delete(`http://localhost:3000/todos/${id}`);
-  }
-  get todoList(): TodoItem[] {
-    return this.todoListArray;
   }
 }

@@ -1,5 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { ToDoService } from '../../services/to-do-service.service';
+import { TodoItem } from '../../modules/todo';
 
 @Component({
   selector: 'app-todo-list',
@@ -7,25 +8,19 @@ import { ToDoService } from '../../services/to-do-service.service';
   templateUrl: './todo-list.component.html',
   styleUrl: './todo-list.component.css',
 })
-export class TodoListComponent {
+export class TodoListComponent implements OnInit {
   private todosSerice = inject(ToDoService);
-  get todoList() {
-    return this.todosSerice.todoList;
-  }
-  createTodo() {
-    this.todosSerice
-      .createTodo({
-        title: 'make one billion dollars',
-        details: 'optimized details',
-        priority: 'LOW',
-        date: new Date(),
-        isChecked: false,
-      })
-      .subscribe({
-        next: (res) => {
-          console.log('todo added', res);
-        },
-      });
+  todoList: TodoItem[] = [];
+  ngOnInit(): void {
+    this.todosSerice.getTodos().subscribe({
+      next: (value) => {
+        this.todoList = value;
+        console.log(value);
+      },
+      complete: () => {
+        console.log('isComplete');
+      },
+    });
   }
 
   displayTodos() {
