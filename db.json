@@ -1,4 +1,21 @@
 {
-  "todos": [],
+  "todos": [
+    {
+      "id": "7cd3637b-c52b-4107-b5ae-2815b1b363b5",
+      "title": "First Task",
+      "details": "Task details goes here",
+      "priority": "LOW",
+      "date": "2026-03-11T16:00:08.937Z",
+      "isChecked": false
+    },
+    {
+      "id": "9ee5c728-ebe3-418c-a13f-384314aaaad5",
+      "title": "ziad",
+      "details": "qwe123",
+      "priority": "LOW",
+      "date": "2026-03-11T21:31:02.727Z",
+      "isChecked": false
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

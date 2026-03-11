@@ -18,6 +18,7 @@ import { provideRouter } from '@angular/router';
 import { TodoPageComponent } from './todo-page/todo-page.component';
 import { AddTodoPageComponent } from './add-todo-page/add-todo-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 @NgModule({
   declarations: [
     App,
@@ -28,6 +29,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ContainerComponent,
     TodoPageComponent,
     AddTodoPageComponent,
+    SearchBarComponent,
   ],
   imports: [
     BrowserModule,

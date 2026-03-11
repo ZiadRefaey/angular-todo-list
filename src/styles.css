@@ -41,6 +41,12 @@
 
     transition: text-shadow 0.3s ease-in-out;
   }
+  .hover-glow:hover {
+    @apply relative;
+    box-shadow: 0 0 10px #135bec;
+
+    transition: text-shadow 0.3s ease-in-out;
+  }
 }
 html {
   overflow-x: hidden;
