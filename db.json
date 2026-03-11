@@ -1,37 +1,4 @@
 {
-  "todos": [
-    {
-      "id": "a994",
-      "title": "asd",
-      "details": "qweqweqw",
-      "priority": "LOW",
-      "date": "2026-03-11T09:40:03.018Z",
-      "isChecked": false
-    },
-    {
-      "id": "a9c4",
-      "title": "Title",
-      "details": "Ahmed",
-      "priority": "LOW",
-      "date": "2026-03-11T09:41:52.472Z",
-      "isChecked": false
-    },
-    {
-      "id": "82c5",
-      "title": "New title",
-      "details": "New component",
-      "priority": "HIGH",
-      "date": "2026-03-11T10:18:37.936Z",
-      "isChecked": false
-    },
-    {
-      "id": "6ffb",
-      "title": "medium",
-      "details": "medium details\n",
-      "priority": "MEDIUM",
-      "date": "2026-03-11T10:24:30.460Z",
-      "isChecked": false
-    }
-  ],
+  "todos": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

@@ -48,8 +48,6 @@ import { ReactiveFormsModule } from '@angular/forms';
         path: 'add-todo',
         component: AddTodoPageComponent,
         title: 'Add Todo',
-        // loadComponent: () =>
-        //   import('./add-todo-page/add-todo-page.component').then((m) => m.AddTodoPageComponent),
       },
     ]),
   ],

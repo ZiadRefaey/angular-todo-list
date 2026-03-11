@@ -15,25 +15,30 @@ export class TodoListComponent implements OnInit {
     this.todosSerice.getTodos().subscribe({
       next: (value) => {
         this.todoList = value;
-        console.log(value);
-      },
-      complete: () => {
-        console.log('isComplete');
       },
     });
   }
-
-  displayTodos() {
-    this.todosSerice.getTodos().subscribe({
-      next: (res) => {
-        console.log(res);
+  onDelete(deletedItem: TodoItem) {
+    const previousTodos = this.todoList;
+    this.todoList = this.todoList.filter((t) => t !== deletedItem);
+    this.todosSerice.deleteTodo(deletedItem.id).subscribe({
+      error: (err) => {
+        console.log('Something went wrong', err);
+        this.todoList = previousTodos;
       },
     });
   }
-  deleteTodo(id: string) {
-    this.todosSerice.deleteTodo(id).subscribe({
-      next: (res) => {
-        console.log('successfully deleted', res);
+  onCheck(checkedTodo: TodoItem) {
+    const previousTodos = this.todoList;
+    this.todoList = this.todoList.map((todo) => {
+      if (todo.id == checkedTodo.id) return { ...todo, isChecked: !todo.isChecked };
+      else return todo;
+    });
+    // console.log(this.todoList);
+    this.todosSerice.updateTodo({ ...checkedTodo, isChecked: !checkedTodo.isChecked }).subscribe({
+      error: (err) => {
+        console.log('something went wrong', err);
+        this.todoList = previousTodos;
       },
     });
   }

@@ -4,4 +4,5 @@ export interface TodoItem {
   priority: 'LOW' | 'MEDIUM' | 'HIGH';
   isChecked: boolean;
   date: Date;
+  id: string;
 }

@@ -18,4 +18,7 @@ export class ToDoService {
   deleteTodo(id: string) {
     return this.http.delete(`http://localhost:3000/todos/${id}`);
   }
+  updateTodo(todo: TodoItem) {
+    return this.http.patch<TodoItem>(`http://localhost:3000/todos/${todo.id}`, todo);
+  }
 }

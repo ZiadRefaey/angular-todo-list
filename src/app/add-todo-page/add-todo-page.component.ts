@@ -40,7 +40,9 @@ export class AddTodoPageComponent {
         ...this.addTodo.getRawValue(),
         date: new Date(),
         isChecked: false,
+        id: crypto.randomUUID(),
       };
+
       this.toDoService.createTodo(createdTodo).subscribe({
         complete: () => {
           console.log('Task has been created');

@@ -11,6 +11,10 @@
 </div>
 <div class="flex flex-col items-center justify-center gap-4">
   @for (item of todoList; track item.title) {
-    <app-todo-item [todoInfo]="item"></app-todo-item>
+    <app-todo-item
+      (delete)="onDelete($event)"
+      (check)="onCheck($event)"
+      [todoInfo]="item"
+    ></app-todo-item>
   }
 </div>
