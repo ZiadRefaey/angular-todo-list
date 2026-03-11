@@ -24,8 +24,20 @@
 
 @layer utilities {
   .glow {
-    @apply relative text-white; /* optional base styling */
+    @apply relative;
     box-shadow: 0 0 10px #135bec;
+
+    transition: text-shadow 0.3s ease-in-out;
+  }
+  .warning-glow {
+    @apply relative;
+    box-shadow: 0 0 10px #ef4444;
+
+    transition: text-shadow 0.3s ease-in-out;
+  }
+  .success-glow {
+    @apply relative;
+    box-shadow: 0 0 10px #10b981;
 
     transition: text-shadow 0.3s ease-in-out;
   }

@@ -8,5 +8,11 @@ import { TodoItem } from '../../modules/todo';
   styleUrl: './todo-item.component.css',
 })
 export class TodoItemComponent {
-  @Input() todoInfo: TodoItem = { date: new Date(), isChecked: true, title: '' };
+  @Input() todoInfo: TodoItem = {
+    date: new Date(),
+    isChecked: true,
+    title: '',
+    details: '',
+    priority: 'LOW',
+  };
 }

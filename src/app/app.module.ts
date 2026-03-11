@@ -17,6 +17,7 @@ import { heroTrash, heroCheck, heroPencil } from '@ng-icons/heroicons/outline';
 import { provideRouter } from '@angular/router';
 import { TodoPageComponent } from './todo-page/todo-page.component';
 import { AddTodoPageComponent } from './add-todo-page/add-todo-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     App,
@@ -31,6 +32,7 @@ import { AddTodoPageComponent } from './add-todo-page/add-todo-page.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     NgIconsModule.withIcons({ heroTrash, heroCheck, heroPencil }),
   ],
   providers: [

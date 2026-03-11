@@ -16,6 +16,8 @@ export class TodoListComponent {
     this.todosSerice
       .createTodo({
         title: 'make one billion dollars',
+        details: 'optimized details',
+        priority: 'LOW',
         date: new Date(),
         isChecked: false,
       })

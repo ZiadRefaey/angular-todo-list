@@ -1,42 +1,90 @@
-<form class="w-full h-full max-w-md mx-auto">
-  <h1 class="font-bold text-3xl mb-10">Create a New Task</h1>
+<form class="w-full h-full max-w-md mx-auto" [formGroup]="addTodo" (submit)="onSubmit()">
+  <div class="flex items-center justify-between">
+    <h1 class="font-bold text-3xl mb-10">Create a New Task</h1>
+    <a
+      routerLink=""
+      class="flex items-center justify-center bg-primary rounded-md cursor-pointer hover:bg-primary-light transition-all duration-300 size-10"
+      ><i class="pi pi-times"></i
+    ></a>
+  </div>
   <div class="flex items-start justify-center gap-2 flex-col mb-6">
     <label for="title" class="font-bold">TASK TITLE</label>
     <div
-      class="border-primary border w-full pl-2 rounded-md flex items-center justify-center gap-5 glow bg-background-light"
+      class="w-full pl-2 rounded-md flex items-center justify-center gap-5 bg-background-light"
+      [ngClass]="{
+        'glow border border-primary': !title.touched,
+        'warning-glow border border-danger-light': title.invalid && title.touched,
+        'success-glow border border-success-light': title.valid && title.touched,
+      }"
     >
       <i class="pi pi-tag text-primary text-xl"></i>
-      <input type="text" class="w-full py-2 outline-none" placeholder="Task title..." />
+      <input
+        type="text"
+        class="w-full py-2 outline-none"
+        placeholder="Task title..."
+        formControlName="title"
+      />
     </div>
+    @if (title.invalid && title.touched) {
+      <p class="text-sm text-danger-light">
+        Input is required and must be atleast 3 characters long
+      </p>
+    }
   </div>
   <div class="flex items-start justify-center gap-2 flex-col mb-6">
     <label for="details" class="font-bold">TASK DETAILS</label>
     <div
       class="border-primary border glow w-full pl-2 rounded-md flex items-start justify-center gap-5 p-2 bg-background-light"
+      [ngClass]="{
+        'glow border border-primary': !details.touched,
+        'warning-glow border border-danger-light': details.invalid && details.touched,
+        'success-glow border border-success-light': details.valid && details.touched,
+      }"
     >
       <i class="pi pi-file text-2xl text-primary"></i>
       <textarea
+        formControlName="details"
         type="text"
         class="w-full outline-none min-h-40"
         placeholder="Task details..."
       ></textarea>
     </div>
+    @if (details.invalid && details.touched) {
+      <p class="text-sm text-danger-light">
+        Input is required and must be atleast 6 characters long
+      </p>
+    }
   </div>
   <div>
     <label for="" class="font-bold mb-5">Priority Level</label>
     <div class="flex items-center justify-between gap-6 mt-2 mb-5">
       <div
-        class="bg-primary-dark py-2 text-center hover:bg-primary-light rounded-xl font-light border border-primary-light flex-1 text-sm"
+        class="py-2 text-center hover:bg-primary-light rounded-xl font-light border border-primary-light flex-1 text-sm cursor-pointer"
+        (click)="priority.setValue('LOW')"
+        [ngClass]="{
+          'bg-primary-light': priority.value === 'LOW',
+          'bg-primary-dark': priority.value !== 'LOW',
+        }"
       >
         LOW
       </div>
       <div
-        class="bg-primary-dark py-2 text-center hover:bg-primary-light rounded-xl font-light border border-primary-light flex-1 text-sm"
+        class="bg-primary-dark py-2 text-center hover:bg-primary-light rounded-xl font-light border border-primary-light flex-1 text-sm cursor-pointer"
+        (click)="priority.setValue('MEDIUM')"
+        [ngClass]="{
+          'bg-primary-light': priority.value === 'MEDIUM',
+          'bg-primary-dark': priority.value !== 'MEDIUM',
+        }"
       >
         MEDIUM
       </div>
       <div
-        class="bg-primary-dark py-2 text-center hover:bg-primary-light rounded-xl font-light border border-primary-light flex-1 text-sm"
+        class="bg-primary-dark py-2 text-center hover:bg-primary-light rounded-xl font-light border border-primary-light flex-1 text-sm cursor-pointer"
+        (click)="priority.setValue('HIGH')"
+        [ngClass]="{
+          'bg-primary-light': priority.value === 'HIGH',
+          'bg-primary-dark': priority.value !== 'HIGH',
+        }"
       >
         HIGH
       </div>
@@ -44,6 +92,7 @@
   </div>
   <button
     class="w-full bg-primary rounded-md py-3 hover:bg-primary-light transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 text-lg"
+    type="submit"
   >
     Add Task
     <i class="pi pi-plus-circle mr-2 text-white"></i>

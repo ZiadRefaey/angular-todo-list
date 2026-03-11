@@ -1,5 +1,7 @@
 export interface TodoItem {
-  isChecked: boolean;
   title: string;
+  details: string;
+  priority: 'LOW' | 'MEDIUM' | 'HIGH';
+  isChecked: boolean;
   date: Date;
 }

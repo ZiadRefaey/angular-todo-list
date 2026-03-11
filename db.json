@@ -1,33 +1,19 @@
 {
   "todos": [
     {
-      "id": "5c6d",
-      "title": "make one billion dollars",
-      "date": "2026-03-03T06:35:12.321Z",
+      "id": "a994",
+      "title": "asd",
+      "details": "qweqweqw",
+      "priority": "LOW",
+      "date": "2026-03-11T09:40:03.018Z",
       "isChecked": false
     },
     {
-      "id": "c768",
-      "title": "make one billion dollars",
-      "date": "2026-03-03T06:35:14.901Z",
-      "isChecked": false
-    },
-    {
-      "id": "f824",
-      "title": "make one billion dollars",
-      "date": "2026-03-03T06:42:47.112Z",
-      "isChecked": false
-    },
-    {
-      "id": "1ff9",
-      "title": "make one billion dollars",
-      "date": "2026-03-03T06:42:47.388Z",
-      "isChecked": false
-    },
-    {
-      "id": "26d2",
-      "title": "make one billion dollars",
-      "date": "2026-03-03T10:04:48.972Z",
+      "id": "a9c4",
+      "title": "Title",
+      "details": "Ahmed",
+      "priority": "LOW",
+      "date": "2026-03-11T09:41:52.472Z",
       "isChecked": false
     }
   ],
